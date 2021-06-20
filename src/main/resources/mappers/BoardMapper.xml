@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.board.mappers.BoardMapper">
+<mapper namespace="com.board.mapper.BoardMapper">
 	<sql id="boardColumns">
-		  idx
+		idx
 		, title
 		, content
 		, writer
 		, view_cnt
 		, notice_yn
+		, secret_yn
 		, delete_yn
 		, insert_time
 		, update_time

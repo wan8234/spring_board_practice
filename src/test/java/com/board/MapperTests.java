@@ -39,4 +39,26 @@ class MapperTests {
 			e.printStackTrace();
 		}
 	}
+	
+	@Test
+	public void testOfUpdate() {
+		BoardDTO params = new BoardDTO();
+		params.setTitle("1번 게시글 제목을 수정합니다.");
+		params.setContent("1번 게시글 내용을 수정합니다.");
+		params.setWriter("홍길동");
+		params.setIdx((long) 1);
+		
+		int result = boardMapper.updateBoard(params);
+		if (result == 1) {
+			BoardDTO board = boardMapper.selectBoardDetail((long) 1);
+			try {
+				String boardJson = new ObjectMapper().writeValueAsString(board);
+				System.out.println("===================");
+				System.out.println(boardJson);
+				System.out.println("===================");
+			} catch (JsonProcessingException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
